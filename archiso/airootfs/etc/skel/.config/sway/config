@@ -1,0 +1,111 @@
+set $mod Mod4
+
+font pango:JetBrains Mono Nerd Font 10
+
+input type:touchpad tap enabled
+input type:touchpad natural_scroll enabled
+
+output * bg #000000 solid_color
+
+exec swaybg -i /usr/share/wallpapers/black.png -m fill -f
+
+gaps inner 8
+gaps outer 2
+
+default_border pixel 2
+default_floating_border pixel 2
+
+smart_gaps on
+smart_borders on
+
+client.focused #ffffff #ffffff #000000 #ffffff #ffffff
+client.focused_inactive #333333 #333333 #888888 #333333 #333333
+client.unfocused #222222 #222222 #666666 #222222 #222222
+client.urgent #ff0000 #ff0000 #ffffff #ff0000 #ff0000
+
+bindsym $mod+Return exec foot
+bindsym $mod+Shift+q kill
+bindsym $mod+d exec wofi --show drun
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+minus split h
+bindsym $mod+underscore split v
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Space floating toggle
+bindsym $mod+Shift+space focus mode_toggle
+
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaymsg exit
+
+bindsym $mod+p mode "resize"
+
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+p mode "default"
+}
+
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Print exec grim - | wl-copy
+
+exec mako
+exec swayidle -w \
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f -c 000000'

@@ -1,0 +1,67 @@
+# Base system
+base
+linux
+linux-firmware
+firmware-sof-signed
+
+# Boot
+systemd-boot
+efibootmgr
+
+# Display server
+ sway
+ swaybg
+ swaylock
+ swayidle
+ xdg-desktop-portal-wlr
+ xdg-desktop-portal
+
+# Bar
+ waybar
+
+# Terminal
+ foot
+
+# Shell
+ zsh
+ zsh-completions
+ zsh-autosuggestions
+ zsh-syntax-highlighting
+
+# Editor
+ neovim
+ vim
+
+# Utilities
+ wl-clipboard
+ grim
+ slurp
+ mako
+ wofi
+ brightnessctl
+ playerctl
+ pavucontrol
+ networkmanager
+ network-manager-applet
+ nmtui
+
+# Audio
+ pipewire
+ pipewire-alsa
+ pipewire-pulse
+ wireplumber
+
+# Fonts
+ noto-fonts
+ noto-fonts-emoji
+ ttf-font-awesome
+ ttf-jetbrains-mono-nerd
+
+# Graphics
+ mesa
+ vulkan-intel
+ vulkan-radeon
+
+# Apps
+ firefox
+ thunar

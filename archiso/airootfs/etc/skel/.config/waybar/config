@@ -1,0 +1,54 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 4,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["tray", "pulseaudio", "network", "battery", "clock"],
+    "sway/workspaces": {
+        "format": "{name}",
+        "on-click": "workspace"
+    },
+    "sway/mode": {
+        "format": "{}"
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 8
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "{signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "format-disconnected": "offline",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%Y-%m-%d}"
+    }
+}
