@@ -28,7 +28,7 @@ fi
 
 mkdir -p "$output_dir"
 rm -rf "$stage_dir"
-sudo rm -rf "$output_dir/work"
+sudo rm -rf "$output_dir"/olea-*.iso "$output_dir/work"
 cp -a "$profile_dir/." "$stage_dir"
 printf '%s\n' "$(version)" > "$stage_dir/VERSION"
 install -Dm755 "$project_dir/scripts/install.sh" "$stage_dir/airootfs/root/install.sh"
