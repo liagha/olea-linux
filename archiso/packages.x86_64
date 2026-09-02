@@ -3,65 +3,80 @@ base
 linux
 linux-firmware
 firmware-sof-signed
+pacman-mirrorlist
 
 # Boot
 systemd-boot
 efibootmgr
 
 # Display server
- sway
- swaybg
- swaylock
- swayidle
- xdg-desktop-portal-wlr
- xdg-desktop-portal
+sway
+swaybg
+swaylock
+swayidle
+xdg-desktop-portal-wlr
+xdg-desktop-portal
 
 # Bar
- waybar
+waybar
 
 # Terminal
- foot
+foot
 
 # Shell
- zsh
- zsh-completions
- zsh-autosuggestions
- zsh-syntax-highlighting
+zsh
+zsh-completions
+zsh-autosuggestions
+zsh-syntax-highlighting
 
 # Editor
- neovim
- vim
+neovim
+vim
 
 # Utilities
- wl-clipboard
- grim
- slurp
- mako
- wofi
- brightnessctl
- playerctl
- pavucontrol
- networkmanager
- network-manager-applet
- nmtui
+wl-clipboard
+grim
+slurp
+mako
+wofi
+brightnessctl
+playerctl
+pavucontrol
+networkmanager
+network-manager-applet
+nmtui
+sudo
+polkit
+reflector
+
+# Swap
+zram-generator
 
 # Audio
- pipewire
- pipewire-alsa
- pipewire-pulse
- wireplumber
+pipewire
+pipewire-alsa
+pipewire-pulse
+wireplumber
 
 # Fonts
- noto-fonts
- noto-fonts-emoji
- ttf-font-awesome
- ttf-jetbrains-mono-nerd
+noto-fonts
+noto-fonts-emoji
+ttf-font-awesome
+ttf-jetbrains-mono-nerd
 
 # Graphics
- mesa
- vulkan-intel
- vulkan-radeon
+mesa
+vulkan-intel
+vulkan-radeon
 
 # Apps
- firefox
- thunar
+firefox
+thunar
+
+# Live installer
+mkinitcpio
+mkinitcpio-archiso
+arch-install-scripts
+gptfdisk
+dosfstools
+cryptsetup
