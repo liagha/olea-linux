@@ -2,11 +2,10 @@
 base
 linux
 linux-firmware
-firmware-sof-signed
+sof-firmware
 pacman-mirrorlist
 
 # Boot
-systemd-boot
 efibootmgr
 
 # Display server
@@ -44,7 +43,6 @@ playerctl
 pavucontrol
 networkmanager
 network-manager-applet
-nmtui
 sudo
 polkit
 reflector
