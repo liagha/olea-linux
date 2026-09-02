@@ -18,6 +18,6 @@ install_boot() {
         printf 'title   Olea Linux\n'
         printf 'linux   /vmlinuz-linux\n'
         printf 'initrd  /initramfs-linux.img\n'
-        printf 'options %s rw quiet\n' "$opts"
+        printf 'options %s rw quiet\n' "$opts console=ttyS0"
     } > "$loader/entries/olea.conf"
 }
