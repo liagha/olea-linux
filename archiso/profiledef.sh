@@ -10,6 +10,7 @@ install_dir="olea"
 arch="x86_64"
 buildmodes=('iso')
 bootmodes=('uefi.systemd-boot')
+pacman_conf="pacman.conf"
 airootfs_image_type="squashfs"
 airootfs_image_tool_options=('-comp' 'xz' '-Xbcj' 'x86' '-b' '1M')
 file_permissions=(
