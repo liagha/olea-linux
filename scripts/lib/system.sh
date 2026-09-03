@@ -3,6 +3,7 @@
 
 bootstrap() {
     step 'install base system'
+    printf '\n  downloading and installing packages (this may take a few minutes)...\n\n'
     local live_only=('mkinitcpio-archiso' 'arch-install-scripts' 'gptfdisk' 'dosfstools')
     [[ $encrypt == no ]] && live_only+=('cryptsetup')
     local list=() keep=() p

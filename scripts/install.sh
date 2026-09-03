@@ -74,7 +74,12 @@ main() {
     set_configs
 
     step 'installation complete'
-    printf '%s\n' "unmount with 'umount -R $target' then reboot"
+    printf '\n'
+    printf '  reboot into your new system with:\n\n'
+    printf '    umount -R %s\n' "$target"
+    printf '    reboot\n'
+    printf '\n'
+    printf '  login with the user you created above.\n'
 }
 
 main

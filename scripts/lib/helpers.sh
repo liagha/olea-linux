@@ -53,7 +53,7 @@ confirm() {
     [[ ${preset[yes]:-no} == yes ]] && return 0
     printf '%s [yes]: ' "$q"
     IFS= read -r a || return 1
-    [[ $a == yes ]]
+    [[ -z $a || $a == yes ]]
 }
 
 in_chroot() {

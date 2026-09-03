@@ -4,7 +4,9 @@
 pick_disk() {
     step 'select disk'
     lsblk -ndp -e 7,253 -o NAME,SIZE,MODEL
-    disk="$(ask 'install to (whole disk)' '')"
+    local hint
+    hint="$(lsblk -ndp -e 7,253 -bo NAME,SIZE | awk '$2+0>max{max=$2+0;dev=$1} END{print dev}')"
+    disk="$(ask 'install to (whole disk)' "$hint")"
     [[ $disk == /* ]] || disk="/dev/$disk"
     [[ -b $disk ]] || die "not a block device: $disk"
     mountpoint -q "$disk" && die "block device in use: $disk"
